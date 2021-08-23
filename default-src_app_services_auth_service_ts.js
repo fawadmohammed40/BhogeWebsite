@@ -155,7 +155,9 @@ let AuthService = class AuthService {
         }));
     }
     getUserDetails() {
-        return this.http.get(`${this.url}/users/` + this.userid).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/users/` + this.userid, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
@@ -192,13 +194,17 @@ let AuthService = class AuthService {
         }));
     }
     getLiveSessions() {
-        return this.http.get(`${this.url}/meetings/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/meetings/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getZoomCred() {
-        return this.http.get(`${this.url}/meetings/zoomCredentials`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/meetings/zoomCredentials`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((res) => { }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
@@ -290,73 +296,97 @@ let AuthService = class AuthService {
     }
     // Get All Website Data
     getAnnouncements() {
-        return this.http.get(`${this.url}/webdata/announcements/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/announcements/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getAdvertisements() {
-        return this.http.get(`${this.url}/webdata/webadvertisements/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/webadvertisements/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getSyllabus() {
-        return this.http.get(`${this.url}/webdata/syllabus/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/syllabus/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getOldQuestionPapers() {
-        return this.http.get(`${this.url}/webdata/oldquestionpapers/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/oldquestionpapers/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getBanners() {
-        return this.http.get(`${this.url}/webdata/banners/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/banners/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getDownloadMaterial() {
-        return this.http.get(`${this.url}/webdata/downloadmaterial/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/downloadmaterial/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getFaculties() {
-        return this.http.get(`${this.url}/webdata/faculty/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/faculty/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getTestimony() {
-        return this.http.get(`${this.url}/webdata/testimony/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/testimony/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getAboutUs() {
-        return this.http.get(`${this.url}/webdata/aboutus/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/aboutus/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getSubscription() {
-        return this.http.get(`${this.url}/webdata/subscription/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/subscription/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getCourses() {
-        return this.http.get(`${this.url}/webdata/getCourse/`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/getCourse/`, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
     }
     getSubjectTopic(id) {
-        return this.http.get(`${this.url}/webdata/getTopic/` + id).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
+        let header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders();
+        header = header.append('Content-Type', 'application/json');
+        return this.http.get(`${this.url}/webdata/getTopic/` + id, { headers: header }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.catchError)((e) => {
             this.showAlert('Error', e.error.message);
             throw new Error(e);
         }));
