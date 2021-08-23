@@ -92,22 +92,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "DownloadPage": () => (/* binding */ DownloadPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_download_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./download.page.html */ 7814);
 /* harmony import */ var _download_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./download.page.scss */ 748);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/auth.service */ 7556);
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/storage */ 8605);
+
+
 
 
 
 
 let DownloadPage = class DownloadPage {
-    constructor() { }
+    constructor(authService, storage) {
+        this.authService = authService;
+        this.storage = storage;
+    }
     ngOnInit() {
+        this.authService.getDownloadMaterial().subscribe((res) => {
+            this.data = res["data"];
+        });
+        this.storage.get('userSub').then((usersub) => {
+            this.userSub = usersub;
+        });
     }
 };
-DownloadPage.ctorParameters = () => [];
-DownloadPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+DownloadPage.ctorParameters = () => [
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService },
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_3__.Storage }
+];
+DownloadPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-download',
         template: _raw_loader_download_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_download_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -144,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n<ion-content>\n  <div class=\"header-top d-none d-lg-block\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-6\">\n                <div class=\"header-contact text-lg-left text-center\">\n                    <ul>\n                        <li><img src=\"../../assets/maps.png\" alt=\"icon\"><span>127/5 Mark street, New york</span></li>\n                        <li><img src=\"../../assets/email.png\" alt=\"icon\"><span>info@yourmail.com</span></li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"col-lg-6\">\n                <div  class=\"header-opening-time text-lg-right text-center\">\n                    <p>Opening Hours : Monday to Saturay - 8 Am to 5 Pm</p>\n                </div>\n            </div>\n        </div> <!-- row -->\n    </div> <!-- container -->\n</div> \n<!-- header top -->\n\n\n\n\n  <nav class=\"navbar  navbar-expand-md navbar-light  \"  >\n    <div class=\"container-fluid \">\n      <!-- <a class=\"navbar-brand\" href=\"#\">Navbar</a> -->\n      <a href=\"\" class=\"logo me-auto\"><img src=\"../../assets/BhogeBlueLogo.png\" alt=\"\" class=\"img-fluid\"></a>\n\n      <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse justify-content-center\" id=\"navbarNavAltMarkup\">\n        <div class=\"navbar-nav\">\n          <a style=\"color: rgb(15, 14, 14);\" class=\"nav-link \" aria-current=\"page\" href=\"#\">Home</a>\n          <a style=\"color: rgb(20, 18, 18);\" class=\"nav-link\" routerLink=\"/about-us\" href=\"#\">About Us</a>\n          <a style=\"color: rgb(10, 8, 8);\" class=\"nav-link\" routerLink=\"/faculties\" href=\"#\">Faculties</a>\n          <a style=\"color: rgb(10, 8, 8);\" class=\"nav-link active\" routerLink=\"/download\" href=\"#\">Download</a>\n          <a style=\"color: rgb(12, 9, 9);\" class=\"nav-link\" routerLink=\"/contact-us\" href=\"#\">Contact Us</a>\n        \n           </div>\n           <div class=\"ion-text-left\">\n            <a target=\"blank\" style=\"background-color: #30bb9e; color: white; \" href=\"http://193.46.199.224/educationAdmin/Auth/login\" class=\"btn btn-md \" role=\"button\" >Login</a>\n          </div>\n      </div>\n    </div>\n    \n  </nav>\n\n \n\n  <div style=\"padding: 60px;\"  class=\"row \">\n    <div class=\"row\">\n      <div class=\"col col-lg-5 col-md-6 col-sm-8\">\n          <div class=\"section-title\">\n              <h2>Access the links form here!</h2>\n          </div>\n      </div>\n  </div>\n    <div class=\"col-sm-6\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Science</h5>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam officia in assumenda sapiente, molestias illo distinctio aspernatur porro quo ratione?.</p>\n          <a target=\"_blank\" href=\"../../assets/Erstellen Portfolio.pdf\" style=\"background-color:#30bb9e;color: white;\" class=\"btn btn-sm\" >Access Link</a>\n          <!-- <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a> -->\n\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-6\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">Maths</h5>\n          <p class=\"card-text\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus fuga nesciunt impedit ipsam sit doloribus laborum nam fugiat perferendis..</p>\n          <a target=\"_blank\" href=\"../../assets/Erstellen Portfolio.pdf\" style=\"background-color: #30bb9e; color: white;\" class=\"btn btn-sm \">Access Link</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("\n<ion-content>\n  <div class=\"header-top d-none d-lg-block\">\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-lg-6\">\n                <div class=\"header-contact text-lg-left text-center\">\n                    <ul>\n                        <li><img src=\"../../assets/maps.png\" alt=\"icon\"><span>127/5 Mark street, New york</span></li>\n                        <li><img src=\"../../assets/email.png\" alt=\"icon\"><span>info@yourmail.com</span></li>\n                    </ul>\n                </div>\n            </div>\n            <div class=\"col-lg-6\">\n                <div  class=\"header-opening-time text-lg-right text-center\">\n                    <p>Opening Hours : Monday to Saturay - 8 Am to 5 Pm</p>\n                </div>\n            </div>\n        </div> <!-- row -->\n    </div> <!-- container -->\n</div> \n<!-- header top -->\n\n\n\n\n  <nav class=\"navbar  navbar-expand-md navbar-light  \"  >\n    <div class=\"container-fluid \">\n      <!-- <a class=\"navbar-brand\" href=\"#\">Navbar</a> -->\n      <a href=\"\" class=\"logo me-auto\"><img src=\"../../assets/BhogeBlueLogo.png\" alt=\"\" class=\"img-fluid\"></a>\n\n      <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse justify-content-center\" id=\"navbarNavAltMarkup\">\n        <div class=\"navbar-nav\">\n          <a style=\"color: rgb(15, 14, 14);\" class=\"nav-link \" aria-current=\"page\" href=\"#\">Home</a>\n          <a style=\"color: rgb(20, 18, 18);\" class=\"nav-link\" routerLink=\"/about-us\" href=\"#\">About Us</a>\n          <a style=\"color: rgb(10, 8, 8);\" class=\"nav-link\" routerLink=\"/faculties\" href=\"#\">Faculties</a>\n          <a style=\"color: rgb(10, 8, 8);\" class=\"nav-link active\" routerLink=\"/download\" href=\"#\">Download</a>\n          <a style=\"color: rgb(12, 9, 9);\" class=\"nav-link\" routerLink=\"/contact-us\" href=\"#\">Contact Us</a>\n        \n           </div>\n           <div class=\"ion-text-left\">\n            <a target=\"blank\" style=\"background-color: #30bb9e; color: white; \" href=\"http://193.46.199.224/educationAdmin/Auth/login\" class=\"btn btn-md \" role=\"button\" >Login</a>\n          </div>\n      </div>\n    </div>\n    \n  </nav>\n\n \n\n  <div style=\"padding: 60px;\"  class=\"row \">\n    <div class=\"row\">\n      <div class=\"col col-lg-5 col-md-6 col-sm-8\">\n          <div class=\"section-title\">\n              <h2>Access the links form here!</h2>\n          </div>\n      </div>\n  </div>\n    <div *ngFor=\"let item of data\" class=\"col-sm-6\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">{{item.download_name}}</h5>\n          <p class=\"card-text\">{{item.download_desc}}</p>\n          <a target=\"_blank\" href=\"{{item.download_attachment}}\" style=\"background-color:#30bb9e;color: white;\" class=\"btn btn-sm\" >Access Link</a>\n          <!-- <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a> -->\n\n        </div>\n      </div>\n    </div>\n  \n  </div>\n</ion-content>\n");
 
 /***/ })
 
